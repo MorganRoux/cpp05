@@ -3,7 +3,9 @@ NAME		=	ex02
 SRCS		=	srcs/main.cpp \
 				srcs/Bureaucrat.cpp \
 				srcs/Form.cpp \
-				srcs/ShrubberyCreationForm.cpp
+				srcs/ShrubberyCreationForm.cpp \
+				srcs/RobotomyRequestForm.cpp \
+				srcs/PresidentialPardonForm.cpp
 
 OBJS		=	$(SRCS:.cpp=.o)
 CC			=	clang++

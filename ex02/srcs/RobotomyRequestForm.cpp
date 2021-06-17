@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
+/*   RobotomyRequestForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mroux <mroux@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,36 +10,34 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm():
-	Form("ShrubberyCreationForm", 145, 137, "cible inconnu")
+RobotomyRequestForm::RobotomyRequestForm():
+	Form("RobotomyRequestForm", 72, 45, "cible inconnu")
 {
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target):
-	Form("ShrubberyCreationForm", 145, 137, target)
+RobotomyRequestForm::RobotomyRequestForm(std::string target):
+	Form("RobotomyRequestForm", 72, 45, target)
 {
 }
 
-ShrubberyCreationForm::~ShrubberyCreationForm()
+RobotomyRequestForm::~RobotomyRequestForm()
 {
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const& cl)
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const& cl)
 {
 	operator=(cl);
 }
 
-ShrubberyCreationForm&	ShrubberyCreationForm::operator=(ShrubberyCreationForm const& cl)
+RobotomyRequestForm&	RobotomyRequestForm::operator=(RobotomyRequestForm const& cl)
 {
 	Form::operator=(cl);
 	return (*this);
 }
 
-void					ShrubberyCreationForm::do_execute()
+void					RobotomyRequestForm::do_execute()
 {
-	std::fstream strm;
-	strm.open(getTarget(), std::ios::out);
-	strm << "arbre" << std::endl;
+	std::cout << "BZZ bZZZ BZZ " << getTarget() << " a été robotomisé." << std::endl;
 }

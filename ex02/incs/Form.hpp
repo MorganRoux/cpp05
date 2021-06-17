@@ -6,7 +6,7 @@
 /*   By: mroux <mroux@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 19:18:49 by mroux             #+#    #+#             */
-/*   Updated: 2021/06/17 20:45:03 by mroux            ###   ########.fr       */
+/*   Updated: 2021/06/17 21:21:07 by mroux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,15 +46,16 @@ public:
 	};
 
 	Form();
-	Form(std::string name, int signGrade, int execGrade) throw(Form::GradeTooHighException, Form::GradeTooLowException);
+	Form(std::string name, int signGrade, int execGrade, std::string target) throw(Form::GradeTooHighException, Form::GradeTooLowException);
 	~Form();
 	Form(Form const &) throw(GradeTooHighException, GradeTooLowException);
 	Form &operator=(Form const &);
 	void display(std::ostream &stream) const;
-	std::string const&	getName();
-	bool				isSigned();
-	int					getSignGrade();
-	int					getExecGrade();
+	std::string const&	getName() const;
+	bool				isSigned() const;
+	int					getSignGrade() const;
+	int					getExecGrade() const;
+	std::string const&	getTarget() const;
 	void				beSigned(Bureaucrat const& b) throw(GradeTooHighException);
 	void				execute(Bureaucrat const& executor) throw (Form::NotSignedException, Form::GradeTooHighException);
 	virtual void		do_execute() = 0;
@@ -63,6 +64,7 @@ private:
 	const int 			_signGrade;
 	const int 			_execGrade;
 	bool 				_signed;
+	std::string			_target;
 
 
 };

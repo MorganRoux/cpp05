@@ -15,10 +15,6 @@ class ShrubberyCreationForm : public Form
 		ShrubberyCreationForm(ShrubberyCreationForm const&);
 		ShrubberyCreationForm&	operator=(ShrubberyCreationForm const& cl);
 		virtual void			do_execute();
-		std::string const&		getTarget() const;
-
-	protected:
-		std::string				_target;
 };
 
 std::ostream&	operator<<(std::ostream& stream, ShrubberyCreationForm const& cl);
