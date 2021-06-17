@@ -6,7 +6,7 @@
 /*   By: mroux <mroux@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 19:02:48 by mroux             #+#    #+#             */
-/*   Updated: 2021/06/17 19:08:27 by mroux            ###   ########.fr       */
+/*   Updated: 2021/06/17 19:45:36 by mroux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Bureaucrat::Bureaucrat()
 	_name = "Pion";
 }
 
-Bureaucrat::Bureaucrat(std::string name, int grade):
+Bureaucrat::Bureaucrat(std::string name, int grade) throw(Bureaucrat::GradeTooHighException, Bureaucrat::GradeTooLowException):
 	_name(name)
 {
 	if (grade < 1)
@@ -56,14 +56,14 @@ int 			Bureaucrat::getGrade()
 {
 	return _grade;
 }
-void 			Bureaucrat::operator++(int)
+void 			Bureaucrat::operator++(int) throw(Bureaucrat::GradeTooHighException)
 {
 	if (_grade == 1)
 		throw GradeTooHighException();
 	_grade--;
 }
 
-void 			Bureaucrat::operator--(int)
+void 			Bureaucrat::operator--(int) throw(Bureaucrat::GradeTooLowException)
 {
 	if (_grade == 150)
 		throw GradeTooLowException();
