@@ -6,7 +6,7 @@
 /*   By: mroux <mroux@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 19:02:48 by mroux             #+#    #+#             */
-/*   Updated: 2021/06/17 19:44:19 by mroux            ###   ########.fr       */
+/*   Updated: 2021/06/17 20:05:35 by mroux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,13 @@ void 			Bureaucrat::operator--(int) throw(Bureaucrat::GradeTooLowException)
 
 void			Bureaucrat::signForm(Form& f)
 {
-	f.beSigned(*this);
+	try {
+		f.beSigned(*this);
+		std::cout << _name << " succesfully signs " << f.getName() << std::endl;
+	}
+	catch(std::exception& e) {
+		std::cout << _name << " can't sign " << f.getName() << " because " << e.what()  << std::endl;
+	}
 }
 std::ostream &operator<<(std::ostream &stream, Bureaucrat const &cl)
 {
