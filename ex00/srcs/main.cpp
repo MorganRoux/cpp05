@@ -6,7 +6,7 @@
 /*   By: mroux <mroux@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 19:02:50 by mroux             #+#    #+#             */
-/*   Updated: 2021/06/17 19:10:58 by mroux            ###   ########.fr       */
+/*   Updated: 2021/07/02 12:46:57 by mroux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,18 @@ int main(void)
 {
 	Bureaucrat b("Eric", 4);
 	Bureaucrat b2("Javier", 149);
+
+	try {
+			Bureaucrat b3("High", -1);
+	} catch( std::exception& e) {
+		std::cout << e.what() << std::endl;
+	}
+
+	try {
+		Bureaucrat b4("Low", 160);
+	} catch( std::exception& e) {
+		std::cout << e.what() << std::endl;
+	}
 
 	std::cout << b << std::endl;
 	b--;
