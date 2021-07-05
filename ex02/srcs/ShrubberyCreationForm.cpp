@@ -6,7 +6,7 @@
 /*   By: mroux <mroux@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 20:19:32 by mroux             #+#    #+#             */
-/*   Updated: 2021/06/17 21:28:22 by mroux            ###   ########.fr       */
+/*   Updated: 2021/07/05 10:01:39 by mroux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,22 @@ ShrubberyCreationForm&	ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 void					ShrubberyCreationForm::do_execute()
 {
 	std::fstream strm;
-	strm.open(getTarget(), std::ios::out);
-	strm << "arbre" << std::endl;
+	strm.open(("./" + getTarget() + "_shrubbery").c_str(), std::ios::out);
+strm << "          .     .  .      +     .      .          ." << std::endl;
+strm << "     .       .      .     #       .           ." << std::endl;
+strm << "        .      .         ###            .      .      ." << std::endl;
+strm << "      .      .   *#:. .:##*##:. .:#*  .      ." << std::endl;
+strm << "          .      . *####*###*####*  ." << std::endl;
+strm << "       .     *#:.    .:#*###*#:.    .:#*  .        .       ." << std::endl;
+strm << "  .             *#########*#########*        .        ." << std::endl;
+strm << "        .    *#:.  *####*###*####*  .:#*   .       ." << std::endl;
+strm << "     .     .  *#######**##*##**#######*                  ." << std::endl;
+strm << "                .*##*#####*#####*##*           .      ." << std::endl;
+strm << "    .   *#:. ...  .:##*###*###*##:.  ... .:#*     ." << std::endl;
+strm << "      .     *#######*##*#####*##*#######*      .     ." << std::endl;
+strm << "    .    .     *#####**#######**#####*    .      ." << std::endl;
+strm << "            .     *      000      *    .     ." << std::endl;
+strm << "       .         .   .   000     .        .       ." << std::endl;
+strm << ".. .. ..................O000O........................ ...... ..." << std::endl;
+
 }

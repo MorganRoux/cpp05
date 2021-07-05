@@ -6,7 +6,7 @@
 /*   By: mroux <mroux@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 20:28:42 by mroux             #+#    #+#             */
-/*   Updated: 2021/06/17 21:41:39 by mroux            ###   ########.fr       */
+/*   Updated: 2021/07/05 09:55:54 by mroux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main(void)
 	RobotomyRequestForm		r("humain");
 	PresidentialPardonForm	p("voleur");
 
-	Bureaucrat 				b("Morgan", 146), a("Eric", 7);
+	Bureaucrat 				b("Morgan", 146), a("Eric", 7), c("Chef", 1);
 
 	a.signForm(r);
 	a.executeForm(r);
@@ -39,5 +39,9 @@ int main(void)
 	b++;b++;b++;b++;b++;b++;b++;b++;b++;b++;b++;b++;b++;b++;b++;b++;b++;b++;b++;b++;b++;b++;b++;b++;b++;b++;b++;b++;b++;b++;b++;b++;b++;
 	std::cout << b << std::endl;
 	b.executeForm(f);
+	c.signForm(r);
+	c.signForm(p);
+	c.executeForm(r);
+	c.executeForm(p);
 
 }

@@ -6,7 +6,7 @@
 /*   By: mroux <mroux@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 20:28:42 by mroux             #+#    #+#             */
-/*   Updated: 2021/06/18 23:26:21 by mroux            ###   ########.fr       */
+/*   Updated: 2021/07/05 10:04:13 by mroux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main(void)
 	Intern		intern;
 	Bureaucrat 	b("Morgan", 146), a("Eric", 7);
 
-	f = intern.makeForm("ShrubberyCreationForm", "maison");
+	f = intern.makeForm("ShrubberyCreationForm", "foret");
 	r = intern.makeForm("RobotomyRequestForm", "humain");
 	p = intern.makeForm("PresidentialPardonForm", "voleur");
 
